@@ -9,6 +9,7 @@ import Home from './Pages/Home';
 import About from './Pages/Dashboard';
 import Users from './Pages/Users';
 import NavbarComponent from './Components/NavbarComponent';
+import LoginPage from './Pages/LoginPage';
 
 export default function App() {
   return (
@@ -34,6 +35,9 @@ export default function App() {
           </Route>
           <Route path="/users">
             <Users />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
           </Route>
           <Route path="/">
             <Home />
