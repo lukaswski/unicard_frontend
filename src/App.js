@@ -6,12 +6,14 @@ import {
   NavLink,
 } from 'react-router-dom';
 import Home from './Pages/Home';
-import About from './Pages/About';
+import About from './Pages/Dashboard';
 import Users from './Pages/Users';
+import NavbarComponent from './Components/NavbarComponent';
 
 export default function App() {
   return (
     <Router>
+      <NavbarComponent />
       <div>
         <nav>
           <ul>
@@ -19,16 +21,13 @@ export default function App() {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/about">Dashboard</NavLink>
             </li>
             <li>
               <NavLink to="/users">Users</NavLink>
             </li>
           </ul>
         </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/about">
             <About />
