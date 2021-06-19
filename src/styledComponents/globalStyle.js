@@ -18,6 +18,9 @@ input{
       width: inherit;
     }
 }
+h5{
+  color: grey;
+}
 
 `;
 
