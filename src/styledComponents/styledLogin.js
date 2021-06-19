@@ -6,7 +6,7 @@ export const LoginWrapper = styled.div`
   height: 400px;
   border: solid grey 1px;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 100px auto 0;
 `;
 
 export const InputsWrapper = styled.div`
@@ -14,9 +14,16 @@ export const InputsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+export const StyledSpan = styled.span`
+  position: absolute;
+  left: 50px;
+  top: -5%;
+  background-color: white;
+  padding: 0 40px 0 10px;
 
+`;
 export const StyledButton = styled(Button)`
-  background-color: #5D8AA6;
+  background-color: ${(props) => props.dissmiss ? "Silver" : '#5D8AA6'} ;
   color: white;
   border: none;
   width: 250px;
@@ -28,17 +35,15 @@ export const StyledButton = styled(Button)`
   margin-right: 25px;
   margin-top: 2rem;
   box-shadow: 2px 2px 12px gray;
+    &.QrModal{
+      width: 200px;
+      height: 40px;
+      margin: 10px;
+    }
     &.signIn{
       position: relative;
       top: -60px;
     }
-  @media(max-width: 980px){
-    margin-left: 0;
-    margin-right: 0;
-    &.heroButton{
-      margin-right: 20px;
-    }
-    };
     &:focus { 
       outline: 0; 
       }
@@ -52,4 +57,11 @@ export const SingleInputWrapper = styled.div`
   align-items: center;
   margin-bottom: ${(props) => props.icon && '20px'};
   position: relative;
+    &.strech{
+      color: red;
+      justify-content: flex-end;
+      width: 55%;
+      font-size: 14px;
+      color: #5D8AA6;
+    }
 `;

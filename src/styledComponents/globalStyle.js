@@ -1,6 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import styled from 'styled-components';
-
 
 const GlobalStyle = createGlobalStyle`
 
@@ -13,11 +11,14 @@ input{
   height: 40px;
   margin: 10px;
   padding-left: 10%;
+    &.checkBox{
+      height:20px;
+      margin: 0;
+      padding: 0;
+      width: inherit;
+    }
 }
-span{
-  position: absolute;
-  left: 50px;
-}
+
 `;
 
 export default GlobalStyle;

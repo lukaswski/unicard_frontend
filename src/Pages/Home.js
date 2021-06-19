@@ -2,7 +2,8 @@ import React from 'react';
 
 const Home = () => (
   <div>
-    Home site
+    
+    hola
   </div>
 );
 

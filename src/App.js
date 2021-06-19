@@ -16,21 +16,21 @@ export default function App() {
     <Router>
       <NavbarComponent />
       <div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/about">Dashboard</NavLink>
+              <NavLink to="/dashboard">Dashboard</NavLink>
             </li>
             <li>
               <NavLink to="/users">Users</NavLink>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         <Switch>
-          <Route path="/about">
+          <Route path="/dashboard">
             <About />
           </Route>
           <Route path="/users">
