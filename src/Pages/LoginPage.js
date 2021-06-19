@@ -39,8 +39,10 @@ const LoginPage = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data.data[0])
         if (data.success) {
           setShowSpinner(true)
+          sessionStorage.setItem("login", data.data[0].login);
           loginTigger(history)
         } else {
           setShow(true);
