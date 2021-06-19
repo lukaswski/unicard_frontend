@@ -12,6 +12,10 @@ export const StyledLink = styled(Link)`
 export const LogoImg = styled.img`
   width: 30%;
   margin-right: -45px;
+    &.nav{
+      width: 25%;
+      margin-right: -20px;
+    };
 `;
 
 export const Logo = styled.div`
