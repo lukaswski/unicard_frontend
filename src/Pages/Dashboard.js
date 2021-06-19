@@ -22,6 +22,7 @@ const Dashboard = () => {
   const txt = useRecoilValue(userState);
   
   const updateData = (childState) => {
+    childState.amount = childState.amount.concat("zł")
     setShow(false)
     qrCodes.push(childState)
   }
@@ -46,7 +47,6 @@ const Dashboard = () => {
         <hr />
         <Wrapper>
           {qrCodes.map((item) => {
-            console.log(item);
             return (
               <QrItem>
                 <h3>{item.amount}</h3>
