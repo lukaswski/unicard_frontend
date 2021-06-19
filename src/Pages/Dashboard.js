@@ -4,13 +4,13 @@ import { useRecoilValue } from 'recoil';
 import { StyledButton } from '../styledComponents/styledLogin';
 import QrModal from '../Components/QrModal';
 import { StyledDashboardWarpper, Wrapper, QrItem } from '../styledComponents/styledDashboard';
-import { textState } from '../recoilState/recoilAtoms';
+import { userState } from '../recoilState/recoilAtoms';
 
 const Dashboard = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const txt = useRecoilValue(textState);
+  const txt = useRecoilValue(userState);
 
   return (
     <>
