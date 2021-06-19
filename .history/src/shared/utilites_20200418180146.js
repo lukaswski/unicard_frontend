@@ -1,0 +1,1 @@
+// przycdatne funcje wielokrotnegu użytku
