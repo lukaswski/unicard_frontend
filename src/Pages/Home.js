@@ -79,9 +79,9 @@ const Home = () => {
         head, image, describe, site,
       }) => (
         <StyledSection key={head}>
-          <h5>
+          <h4>
             {head}
-          </h5>
+          </h4>
           <IconWrapper className={site}>
             <p>{describe}</p>
             <div>

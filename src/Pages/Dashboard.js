@@ -21,6 +21,7 @@ const Dashboard = () => {
   const handleShow = () => setShow(true);
   const txt = useRecoilValue(userState);
   
+  
   const updateData = (childState) => {
     childState.amount = childState.amount.concat("zł")
     setShow(false)
@@ -33,7 +34,7 @@ const Dashboard = () => {
       <StyledDashboardWarpper>
         <Wrapper head>
           <h4>
-            {txt} ponownie{" "}
+            Witaj ponownie{" "}
             {sessionStorage
               .getItem("login")
               .substring(0, sessionStorage.getItem("login").lenght)}
