@@ -46,5 +46,5 @@ export const deleteData = async (id, action) => {
 };
 
 export const alertTrigger = (condition, history) => condition && setTimeout(() => {
-  history.push('/Tasks');
+  history.push('/');
 }, 2000);

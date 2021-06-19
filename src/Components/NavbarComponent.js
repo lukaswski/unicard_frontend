@@ -6,7 +6,7 @@ import { StyledLink } from '../styledComponents/styledNavbar';
 
 const NavbarComponent = () => (
   <>
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
       <StyledLink to="/">
         <h4>
           QCard

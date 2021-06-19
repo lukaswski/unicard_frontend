@@ -26,7 +26,7 @@ export const StyledSpan = styled.span`
 
 `;
 export const StyledButton = styled(Button)`
-  background-color: ${(props) => props.dissmiss ? "Silver" : '#5D8AA6'} ;
+  background-color: ${(props) => props.dissmiss ? "Silver" : '#00a2f9'} ;
   color: white;
   border: none;
   width: 250px;
@@ -51,7 +51,7 @@ export const StyledButton = styled(Button)`
       outline: 0; 
       }
     &:hover {
-      background-color: #184059;
+      background-color: #006093;
     }
     @media(max-width: 450px) {
       width: 180px;
