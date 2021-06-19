@@ -9,7 +9,7 @@ const NavbarComponent = () => (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <StyledLink to="/">
         <h4>
-          UniCard
+          QCard
         </h4>
       </StyledLink>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -18,12 +18,12 @@ const NavbarComponent = () => (
         <Nav>
           <Nav.Link>
             <StyledLink to="/login">
-              Login
+              Zaloguj się
             </StyledLink>
           </Nav.Link>
           <Nav.Link>
             <StyledLink to="/login">
-              New account
+              Nowe konto
             </StyledLink>
           </Nav.Link>
         </Nav>

@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink,
 } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/Dashboard';
@@ -16,19 +15,6 @@ export default function App() {
     <Router>
       <NavbarComponent />
       <div>
-        {/* <nav>
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard">Dashboard</NavLink>
-            </li>
-            <li>
-              <NavLink to="/users">Users</NavLink>
-            </li>
-          </ul>
-        </nav> */}
         <Switch>
           <Route path="/dashboard">
             <About />
