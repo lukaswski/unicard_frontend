@@ -99,7 +99,7 @@ const Dashboard = () => {
         </Wrapper>
         <hr />
         <Wrapper>
-          <StyledButton onClick={handleShow}>historia</StyledButton>
+          <StyledButton className="second" onClick={handleShow}>historia</StyledButton>
         </Wrapper>
         <hr />
       </StyledDashboardWarpper>
