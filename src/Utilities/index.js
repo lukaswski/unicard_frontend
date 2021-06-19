@@ -1,5 +1,5 @@
 
-export const getUser = async (action, login, password) => {
+export const fetchData = async (action, login, password) => {
   const res = await fetch(`https://hack4lem-backend.herokuapp.com/user?login=${login}&password=${password}`);
   const json = await res.json();
   action(json.data);
@@ -44,10 +44,6 @@ export const deleteData = async (id, action) => {
     .then((res) => action(res));
 
 };
-
-export const alertTrigger = (condition, history) => condition && setTimeout(() => {
-  history.push('/Tasks');
-}, 2000);
 
 export const loginTigger = (history) => setTimeout(() => {
   history.push('/dashboard');
