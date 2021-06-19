@@ -11,8 +11,10 @@ import {
   StyledButton,
   SingleInputWrapper,
   StyledSpan,
+  StyledSpinner,
+
 } from "../styledComponents/styledLogin";
-import { userIcon, lockIcon, userQrIcon } from "../img/icons/svg";
+import { userIcon, lockIcon, userQrIcon, userQrIconGray } from "../img/icons/svg";
 
 const LoginPage = () => {
   const [login, setLogin] = useState();
@@ -48,14 +50,16 @@ const LoginPage = () => {
         }
       });
   };
-
   return (
     <LoginWrapper>
       <InputsWrapper>
         <StyledButton className="signIn" variant="secondary" type="button">
           zarejestruj sie
         </StyledButton>
-        <SingleInputWrapper icon>{userQrIcon}</SingleInputWrapper>
+        {showSpinner && <StyledSpinner animation="border" variant="primary" />}
+        <SingleInputWrapper icon>
+          {showSpinner ? userQrIconGray : userQrIcon }
+          </SingleInputWrapper>
         <SingleInputWrapper>
           {userIcon}
           <StyledSpan>nazwa</StyledSpan>
@@ -82,6 +86,7 @@ const LoginPage = () => {
           <div>zapomniałeś hasła?</div>
         </SingleInputWrapper>
         <StyledButton
+          className="second"
           variant="secondary"
           type="submit"
           onClick={() => {
@@ -97,7 +102,7 @@ const LoginPage = () => {
           <p>Błędny login lub hasło.</p>
         </Alert>
       )}
-      {showSpinner && <Spinner animation="border" variant="primary" />}
+      
     </LoginWrapper>
   );
 };

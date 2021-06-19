@@ -72,7 +72,7 @@ const Home = () => {
             </div>
           </StyledMainSlogan>
           <StyledButton onClick={() => history.push('/login')}>nowe konto</StyledButton>
-          <StyledButton onClick={() => history.push('/login')}>zaloguj się</StyledButton>
+          <StyledButton className="second" onClick={() => history.push('/login')}>zaloguj się</StyledButton>
         </MainText>
       </StyledHero>
       {sections.map(({
