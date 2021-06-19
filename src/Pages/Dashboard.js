@@ -10,15 +10,14 @@ const Dashboard = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const count = useRecoilValue(textState);
-  
+  const txt = useRecoilValue(textState);
+
   return (
     <>
-    {count}
       <StyledDashboardWarpper>
         <Wrapper head>
           <h4>
-            Witaj ponownie Łukasz
+            {txt} ponownie Łukasz
           </h4>
         </Wrapper>
 

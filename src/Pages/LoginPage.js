@@ -1,27 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { fetchData } from '../Utilities/index';
+
 import {
   LoginWrapper, InputsWrapper, StyledButton, SingleInputWrapper, StyledSpan,
 } from '../styledComponents/styledLogin';
-import { fetchData } from '../Utilities';
 import { userIcon, lockIcon, userQrIcon } from '../img/icons/svg';
 
 const LoginPage = () => {
   const [fetchedUser, setFetchedUser] = useState();
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
+  const [login, setLogin] = useState();
   const [submit, setSubmit] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
-    fetchData(setFetchedUser, login, password);
-  }, [submit]);
-  console.log(fetchedUser);
-
-  const handleSubmit = () => (
-  setSubmit(true),
-  history.push('/')
-  );
+    fetchData(setLogin, 'test', 'test');
+  }, []);
+  console.log(login);
 
   return (
     <LoginWrapper>
@@ -40,14 +35,14 @@ const LoginPage = () => {
         <SingleInputWrapper>
           {lockIcon}
           <StyledSpan>hasło</StyledSpan>
-          <input type="password" onChange={(e) => setPassword(e.target.value)} />
+          <input type="password" />
         </SingleInputWrapper>
         <SingleInputWrapper className="strech">
           <div>
             zapomniałeś hasła?
           </div>
         </SingleInputWrapper>
-        <StyledButton variant="secondary" type="submit" onClick={() => handleSubmit()}>zaloguj się</StyledButton>
+        <StyledButton variant="secondary" type="submit">zaloguj się</StyledButton>
       </InputsWrapper>
     </LoginWrapper>
   );

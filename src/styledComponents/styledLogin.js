@@ -7,6 +7,9 @@ export const LoginWrapper = styled.div`
   border: solid grey 1px;
   border-radius: 10px;
   margin: 100px auto 0;
+    @media(max-width: 775px) {
+        width: 80%;
+      }
 `;
 
 export const InputsWrapper = styled.div`
@@ -49,6 +52,11 @@ export const StyledButton = styled(Button)`
       }
     &:hover {
       background-color: #184059;
+    }
+    @media(max-width: 450px) {
+      width: 180px;
+      letter-spacing: 1px;
+      font-size: 16px;
     }
   }`;
 

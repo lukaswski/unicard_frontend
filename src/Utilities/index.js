@@ -1,5 +1,4 @@
 
-
 export const fetchData = async (action, login, password) => {
   const res = await fetch(`https://hack4lem-backend.herokuapp.com/user?login=${login}&password=${password}`);
   const json = await res.json();

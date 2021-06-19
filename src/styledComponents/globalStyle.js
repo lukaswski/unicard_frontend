@@ -17,6 +17,13 @@ input{
       padding: 0;
       width: inherit;
     }
+    @media(max-width: 775px) {
+      width: 200px;
+    }
+}
+h1{
+  font-size: 50px;
+  letter-spacing: 5px;
 }
 h5{
   color: grey;
