@@ -1,54 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { loginTigger } from "../Utilities/index";
-import { useRecoilState } from "recoil";
-import { userState } from "../recoilState/recoilAtoms";
-import { Alert, Spinner } from "react-bootstrap";
-
+import React, { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { useHistory } from 'react-router-dom';
+import { fetchData } from '../Utilities/index';
 import {
-  LoginWrapper,
-  InputsWrapper,
-  StyledButton,
-  SingleInputWrapper,
-  StyledSpan,
-} from "../styledComponents/styledLogin";
-import { userIcon, lockIcon, userQrIcon } from "../img/icons/svg";
+  LoginWrapper, InputsWrapper, StyledButton, SingleInputWrapper, StyledSpan,
+} from '../styledComponents/styledLogin';
+import { userIcon, lockIcon, userQrIcon } from '../img/icons/svg';
+import {userState} from '../recoilState/recoilAtoms';
 
 const LoginPage = () => {
-  const [login, setLogin] = useState();
-  const [state, setState] = useState({
-    login: "",
-    password: "",
-  });
-
   const history = useHistory();
+  const [login, setLogin] = useState();
+  const [pass, setPass] = useState('');
+  const [user, setUser] = useState();
+  const [isLogged, setLogged] = useState(false);
 
-  const handleChange = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value,
-    });
-  };
+  const [text, setText] = useRecoilState(userState);
 
-  const [show, setShow] = useState(false);
-  const [showSpinner, setShowSpinner] = useState(false);
+  const handleSubmitButton = () => (
+    setLogged(!isLogged)
+  );
 
-  const logIn = async (login, password) => {
-    fetch(
-      `https://hack4lem-backend.herokuapp.com/user?login=${login}&password=${password}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.data[0])
-        if (data.success) {
-          setShowSpinner(true)
-          sessionStorage.setItem("login", data.data[0].login);
-          loginTigger(history)
-        } else {
-          setShow(true);
-        }
-      });
-  };
+  useEffect(() => {
+    fetchData(setText, login, pass);
+  }, [isLogged]);
+
+console.log(text);
 
   return (
     <LoginWrapper>
@@ -56,49 +33,26 @@ const LoginPage = () => {
         <StyledButton className="signIn" variant="secondary" type="button">
           zarejestruj sie
         </StyledButton>
-        <SingleInputWrapper icon>{userQrIcon}</SingleInputWrapper>
+        <SingleInputWrapper icon>
+          {userQrIcon}
+        </SingleInputWrapper>
         <SingleInputWrapper>
           {userIcon}
           <StyledSpan>nazwa</StyledSpan>
-          <input
-            type="text"
-            name="login"
-            placeholder="login"
-            value={state.login}
-            onChange={handleChange}
-          />
+          <input type="text" onChange={(e) => setLogin(e.target.value)} />
         </SingleInputWrapper>
         <SingleInputWrapper>
           {lockIcon}
           <StyledSpan>hasło</StyledSpan>
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            value={state.password}
-            onChange={handleChange}
-          />
+          <input type="password"  onChange={(e) => setPass(e.target.value)} />
         </SingleInputWrapper>
         <SingleInputWrapper className="strech">
-          <div>zapomniałeś hasła?</div>
+          <div>
+            zapomniałeś hasła?
+          </div>
         </SingleInputWrapper>
-        <StyledButton
-          variant="secondary"
-          type="submit"
-          onClick={() => {
-            logIn(state.login, state.password);
-          }}
-        >
-          zaloguj się
-        </StyledButton>
+        <StyledButton variant="secondary" type="submit" onClick={() => handleSubmitButton()}>zaloguj się</StyledButton>
       </InputsWrapper>
-      {show && (
-        <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-          <Alert.Heading>Błąd podczas próby zalogowania!</Alert.Heading>
-          <p>Błędny login lub hasło.</p>
-        </Alert>
-      )}
-      {showSpinner && <Spinner animation="border" variant="primary" />}
     </LoginWrapper>
   );
 };
