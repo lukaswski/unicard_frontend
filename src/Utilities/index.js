@@ -6,19 +6,16 @@ export const fetchData = async (action, login, password) => {
   action(json.data);
 };
 
-export const postData = async (dataToSend, action, id) => {
-  await fetch(``,
+export const postData = async () => {
+  await fetch(`https://hack4lem-backend.herokuapp.com/user`,
     {
-      method: 'POST',
+      method: 'GET',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(
-        dataToSend,
-      ),
     }).then((res) => res.json())
-    .then((res) => action(res));
+    .then((res) => console.log(res));
 };
 
 export const patchData = async (dataToSend, action, id) => {
