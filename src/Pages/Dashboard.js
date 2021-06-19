@@ -12,12 +12,13 @@ const Dashboard = () => {
   const handleShow = () => setShow(true);
   const txt = useRecoilValue(userState);
 
+
   return (
     <>
       <StyledDashboardWarpper>
         <Wrapper head>
           <h4>
-            witaj ponownie Łukasz
+            {txt} ponownie {sessionStorage.getItem("login").substring(0,sessionStorage.getItem("login").lenght)}
           </h4>
         </Wrapper>
 
