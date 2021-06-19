@@ -10,12 +10,13 @@ const NavbarComponent = () => (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
       <StyledLink to="/">
         <Logo>
-         Qcard
+          <LogoImg src={Logo_Qcard} className="nav" />
+          Qcard
         </Logo>
       </StyledLink>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">{" "}</Nav>
+        <Nav className="mr-auto">{' '}</Nav>
         <Nav>
           <Nav.Link>
             <StyledLink to="/login">
