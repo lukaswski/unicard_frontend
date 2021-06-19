@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 
 export const LoginWrapper = styled.div`
   width: 50%;
@@ -43,6 +43,12 @@ export const StyledButton = styled(Button)`
       height: 40px;
       margin: 10px;
     }
+    &.second {
+      background-color: #006093;
+      &:hover {
+      background-color: #00a2f9;
+    }
+    }
     &.signIn{
       position: relative;
       top: -60px;
@@ -72,4 +78,9 @@ export const SingleInputWrapper = styled.div`
       font-size: 14px;
       color: #5D8AA6;
     }
+`;
+export const StyledSpinner = styled(Spinner)`
+  position: absolute;
+  z-index: 1;
+  margin-top: 115px;
 `;

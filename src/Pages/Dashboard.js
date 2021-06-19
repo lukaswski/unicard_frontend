@@ -18,7 +18,7 @@ const Dashboard = () => {
       <StyledDashboardWarpper>
         <Wrapper head>
           <h4>
-            {txt} ponownie {sessionStorage.getItem("login").substring(0,sessionStorage.getItem("login").lenght)}
+            Witaj ponownie {sessionStorage.getItem("login").substring(0,sessionStorage.getItem("login").lenght)}
           </h4>
         </Wrapper>
 
@@ -77,7 +77,7 @@ const Dashboard = () => {
         </Wrapper>
         <hr />
         <Wrapper>
-          <StyledButton onClick={handleShow}>historia</StyledButton>
+          <StyledButton className="second" onClick={handleShow}>historia</StyledButton>
         </Wrapper>
         <hr />
       </StyledDashboardWarpper>

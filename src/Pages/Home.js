@@ -1,8 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import {
-  StyledHero, heroImg, StyledImg, MainText, StyledSection, StepWrapper, StyledFooter, StyledIcons, StyledMainSlogan, IconWrapper, ValueHead,
+  StyledHero, heroImg, StyledImg, MainText, StyledSection, StyledFooter, StyledIcons, StyledMainSlogan, IconWrapper, ValueHead, HeroTxt
 } from '../styledComponents/styledHome';
+import { LogoImg } from '../styledComponents/styledNavbar';
 import main from '../img/main.jpg';
 import save from '../img/save.png';
 import loved from '../img/loved.png';
@@ -12,6 +13,7 @@ import step1 from '../img/step1.png';
 import step2 from '../img/step2.png';
 import step3 from '../img/step3.png';
 import step4 from '../img/step4.png';
+import Logo_Qcard from '../img/Logo_Qcard.png';
 import { StyledButton } from '../styledComponents/styledLogin';
 
 const stepsToUse = [
@@ -64,20 +66,22 @@ const Home = () => {
         </heroImg>
         <MainText>
           <StyledMainSlogan>
-            <h1>Zapłać wszystkim</h1>
-            <span>bezpieczny portfel, w jednej naklejce</span>
+            <div>
+              <HeroTxt>Print & Pay<LogoImg src={Logo_Qcard} /></HeroTxt>
+              <span>bezpieczny portfel, w jednej naklejce</span>
+            </div>
           </StyledMainSlogan>
           <StyledButton onClick={() => history.push('/login')}>nowe konto</StyledButton>
-          <StyledButton onClick={() => history.push('/login')}>zaloguj się</StyledButton>
+          <StyledButton className="second" onClick={() => history.push('/login')}>zaloguj się</StyledButton>
         </MainText>
       </StyledHero>
       {sections.map(({
         head, image, describe, site,
       }) => (
         <StyledSection key={head}>
-          <h4>
+          <h5>
             {head}
-          </h4>
+          </h5>
           <IconWrapper className={site}>
             <p>{describe}</p>
             <div>
