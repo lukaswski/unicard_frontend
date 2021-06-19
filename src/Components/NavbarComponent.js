@@ -2,19 +2,20 @@ import React from 'react';
 import {
   Navbar, Nav,
 } from 'react-bootstrap';
-import { StyledLink } from '../styledComponents/styledNavbar';
+import { StyledLink, LogoImg, Logo } from '../styledComponents/styledNavbar';
+import Logo_Qcard from '../img/Logo_Qcard.png';
 
 const NavbarComponent = () => (
   <>
     <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
       <StyledLink to="/">
-        <h4>
-          QCard
-        </h4>
+        <Logo>
+         Qcard
+        </Logo>
       </StyledLink>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto" />
+        <Nav className="mr-auto">{" "}</Nav>
         <Nav>
           <Nav.Link>
             <StyledLink to="/login">

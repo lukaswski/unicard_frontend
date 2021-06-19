@@ -18,7 +18,8 @@ const Dashboard = () => {
       <StyledDashboardWarpper>
         <Wrapper head>
           <h4>
-            {txt} ponownie {sessionStorage.getItem("login").substring(0,sessionStorage.getItem("login").lenght)}
+            Witaj ponownie Łukasz
+            {/* Witaj ponownie {sessionStorage.getItem("login").substring(0,sessionStorage.getItem("login").lenght)} */}
           </h4>
         </Wrapper>
 

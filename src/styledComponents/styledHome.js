@@ -21,6 +21,10 @@ export const MainText = styled.div`
     text-align: center;
       }
 `;
+export const HeroTxt = styled.div`
+  font-size: 50px;
+  letter-spacing: 5px;
+`;
 
 export const StyledImg = styled.img`
   width: 20%;
@@ -31,6 +35,8 @@ export const StyledImg = styled.img`
 
 export const StyledMainSlogan = styled.div`
   margin-bottom: 80px;
+  display: flex;
+  
     @media(max-width: 1200px) {
       margin-bottom: 0px;
       }
@@ -44,6 +50,10 @@ export const StyledSection = styled.div`
   text-align: center;
   &.howToUse{
     height: 900px;
+    @media(max-width: 1265px) {
+      height: 100%;
+  }
+ 
   }
 `;
 
@@ -74,6 +84,10 @@ margin: 0 auto;
 padding: 20px;
 color: white;
 letter-spacing: 5px;
+font-weight: 600;
+@media(max-width: 1100px) {
+      width: 90%;
+  }
 `;
 
 export const StyledFooter = styled.div`
