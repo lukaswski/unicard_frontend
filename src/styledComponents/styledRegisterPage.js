@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  padding-top: 30px;
   width: 80%; 
   margin: 0 auto;
   text-align: left;
@@ -15,4 +16,7 @@ export const RegisterForm = styled.div`
 
 export const StyledInput = styled.input`
   width: 50%;
+  @media(max-width: 800px) {
+    width: 80%;
+  }
 `;
