@@ -10,7 +10,7 @@ export const StyledDashboardWarpper = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: ${(props) => props.head ? 'flex-start' : 'center'};
+  justify-content: ${(props) => props.head ? 'space-between' : 'center'};
 `;
 
 export const QrItem = styled.div`

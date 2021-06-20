@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import QRCode from "react-qr-code";
 import { useRecoilValue } from "recoil";
+import { Button } from 'react-bootstrap';
 import { StyledButton } from "../styledComponents/styledLogin";
 import QrModal from "../Components/QrModal";
 import {
@@ -39,6 +40,11 @@ const Dashboard = () => {
               .getItem("login")
               .substring(0, sessionStorage.getItem("login").lenght)}
           </h4>
+          <div>
+            <h5>Dostępne środki Qcards: 220zł</h5>
+              <Button variant="outline-secondary" size="sm" className="mr-2" >historia wpłat</Button>
+              <Button variant="outline-success" size="sm" className="mr-2">doładuj konto</Button>
+          </div>
         </Wrapper>
 
         <Wrapper />
