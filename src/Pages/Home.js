@@ -40,7 +40,7 @@ const sections = [
     head: 'Łatwość obsługi',
     image: loved,
     site: 'normal',
-    describe: 'Zapomnij, że zgubisz portfel, wszystko masz pod ręką w jednej naklejce z ograniczonym budżetem',
+    describe: 'Od teraz możesz zapomnie o portfelu, wszystko czego potrzebujesz masz w jednej naklejce',
   },
   {
     head: 'Bezpieczne transakcje',
@@ -52,7 +52,7 @@ const sections = [
     head: 'Wystarczy wydrukować naklejkę',
     image: printIt,
     site: 'normal',
-    describe: 'Zapomnij, że zgubisz portfel, wszystko masz pod ręką w jednej naklejce z ograniczonym budżetem',
+    describe: 'Wygenerowaną naklejkę wydrukuj samodzielnie np na samoprzylepnym papierze ',
   },
 ];
 
@@ -71,7 +71,7 @@ const Home = () => {
               <span>bezpieczny portfel, w jednej naklejce</span>
             </div>
           </StyledMainSlogan>
-          <StyledButton onClick={() => history.push('/login')}>nowe konto</StyledButton>
+          <StyledButton onClick={() => history.push('/register')}>nowe konto</StyledButton>
           <StyledButton className="second" onClick={() => history.push('/login')}>zaloguj się</StyledButton>
         </MainText>
       </StyledHero>
@@ -83,7 +83,7 @@ const Home = () => {
             {head}
           </h4>
           <IconWrapper className={site}>
-            <p>{describe}</p>
+            <h5>{describe}</h5>
             <div>
               <StyledIcons src={image} />
             </div>

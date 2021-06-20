@@ -52,7 +52,7 @@ const LoginPage = () => {
   return (
     <LoginWrapper>
       <InputsWrapper>
-        <StyledButton className="signIn" variant="secondary" type="button">
+        <StyledButton className="signIn" variant="secondary" type="button" onClick={() => history.push('/register')} >
           zarejestruj sie
         </StyledButton>
         {showSpinner && <StyledSpinner animation="border" variant="primary" />}

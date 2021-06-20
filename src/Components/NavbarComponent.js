@@ -1,11 +1,14 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Navbar, Nav,
 } from 'react-bootstrap';
 import { StyledLink, LogoImg, Logo } from '../styledComponents/styledNavbar';
 import Logo_Qcard from '../img/Logo_Qcard.png';
 
-const NavbarComponent = () => (
+const NavbarComponent = () => {
+  const history = useHistory()
+return(
   <>
     <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
       <StyledLink to="/">
@@ -24,7 +27,7 @@ const NavbarComponent = () => (
             </StyledLink>
           </Nav.Link>
           <Nav.Link>
-            <StyledLink to="/login">
+            <StyledLink to="/register" >
               Nowe konto
             </StyledLink>
           </Nav.Link>
@@ -35,5 +38,6 @@ const NavbarComponent = () => (
 
 
 );
+};
 
 export default NavbarComponent;

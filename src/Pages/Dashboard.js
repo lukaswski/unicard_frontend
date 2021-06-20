@@ -56,21 +56,7 @@ const Dashboard = () => {
               </QrItem>
             );
           })}
-          {/* <QrItem>
-            <h3>50zł</h3>
-            <QRCode value="asdhjhgjasd" size="100" />
-            <h6>17.11.2021</h6>
-          </QrItem>
-          <QrItem>
-            <h3>25zł</h3>
-            <QRCode value="asdghjghjasd" size="100" />
-            <h6>11.02.2021</h6>
-          </QrItem>
-          <QrItem>
-            <h3>120zł</h3>
-            <QRCode value="asdaghjgjsd" size="100" />
-            <h6>07.15.2021</h6>
-          </QrItem> */}
+
         </Wrapper>
         <hr />
         <Wrapper>

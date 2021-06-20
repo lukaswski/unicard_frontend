@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/Dashboard';
-import Users from './Pages/Users';
+import RegisterPage from './Pages/RegisterPage';
 import NavbarComponent from './Components/NavbarComponent';
 import LoginPage from './Pages/LoginPage';
 
@@ -19,8 +19,8 @@ export default function App() {
           <Route path="/dashboard">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/register">
+            <RegisterPage />
           </Route>
           <Route path="/login">
             <LoginPage />
